@@ -1,0 +1,343 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(10, 13, 20, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-tab.active {
+  color: #ffffff;
+  background: var(--accent-indigo);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Metric Cards Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  padding: 1.5rem;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.metric-subtext {
+  font-size: 0.8rem;
+  color: var(--accent-emerald);
+}
+
+/* Priority Matrix Table */
+.priority-section {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.priority-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.priority-table th,
+.priority-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.priority-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.priority-badge.high {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.priority-badge.medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.priority-badge.low {
+  background: rgba(244, 63, 94, 0.2);
+  color: #fb7185;
+  border: 1px solid rgba(244, 63, 94, 0.4);
+}
+
+/* Analyst View */
+.analyst-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quick-questions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.quick-q-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.quick-q-btn:hover {
+  border-color: var(--accent-indigo);
+  color: var(--text-primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.chat-box {
+  padding: 1.5rem;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.response-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.intent-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.briefing-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* Trust Model Breakdown Component */
+.trust-panel {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(10, 13, 20, 0.6);
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+}
+
+.trust-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.trust-category-block {
+  margin-bottom: 1rem;
+}
+
+.trust-cat-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+}
+
+.trust-item-list {
+  list-style: none;
+  margin-top: 0.4rem;
+  padding-left: 0.75rem;
+}
+
+.trust-item-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+/* Surprise Record Scenario Builder */
+.scenario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1.5rem;
+}
+
+.scenario-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(10, 13, 20, 0.8);
+  border: 1px solid var(--border-subtle);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.scenario-input:focus {
+  border-color: var(--accent-indigo);
+}
+
+.submit-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--gradient-brand);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.match-similarity-card {
+  padding: 1rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* Transformation Graph View */
+.graph-container {
+  padding: 1.5rem;
+  min-height: 500px;
+}
+
+.graph-nodes-flow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+}
+
+.graph-node-card {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  min-width: 160px;
+  text-align: center;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+}
+
+.graph-arrow {
+  color: var(--text-muted);
+  font-size: 1.5rem;
+}

@@ -1,0 +1,30 @@
+# =============================================================================
+# TransformIQ — Docker Compose (Local Development)
+# =============================================================================
+# Start the database:  docker compose up -d db
+# Stop everything:     docker compose down
+# Wipe volumes:        docker compose down -v
+
+services:
+  db:
+    image: ankane/pgvector:v0.5.1
+    container_name: transformiq_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-transformiq}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-transformiq_dev}
+      POSTGRES_DB: ${POSTGRES_DB:-transformiq}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-transformiq} -d ${POSTGRES_DB:-transformiq}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  postgres_data:
+    name: transformiq_postgres_data
